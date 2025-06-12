@@ -26,10 +26,10 @@ class ImagesLoader():
             self.start_chance = 10
             self.list = []
             list = os.listdir(resource_path("images/"))
+            list.remove(".gitkeep")
             print(list)
             for dest in list:
                 self.list.append(resource_path("images/" + dest))
-            print(self.list)
             ImagesLoader.__is_first_init = False
     
     def get_random_image(self):

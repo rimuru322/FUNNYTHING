@@ -17,12 +17,25 @@ class LolWindow(QWidget):
 
         self.image_label = QLabel(self)
         self.image_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.image_label.setScaledContents(True)
+
+        desktop = QApplication.desktop()
+        height = desktop.height()
+        self.base_size = int(height / 1.5)
     
     def change_image(self):
-        image = QImage(choose_image())
+        path = choose_image()
+        print(path)
+        image = QImage(path)
         pixmap = QPixmap.fromImage(image)
         self.image_label.setPixmap(pixmap)
-        self.image_label.resize(pixmap.width(), pixmap.height())
+        try:
+            ratio = pixmap.width() / pixmap.height()
+        except ZeroDivisionError:
+            print("АЛЛО БЛЯТЬ НА НОЛЬ ДЕЛИШЬ")
+            return
+        print(ratio)
+        self.image_label.resize(int(self.base_size * ratio), self.base_size)
 
 
 def hide():
