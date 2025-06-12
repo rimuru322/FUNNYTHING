@@ -1,0 +1,8 @@
+.venv
+venv
+**__pycache__
+.vscode
+
+images/*.png
+images/*.jpg
+output
