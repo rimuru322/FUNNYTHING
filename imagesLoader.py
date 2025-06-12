@@ -24,20 +24,20 @@ class ImagesLoader():
     def __init__(self):
         if ImagesLoader.__is_first_init:
             self.start_chance = 10
-            self.list = []
+            self.list_of_images = []
             list = os.listdir(resource_path("images/"))
             list.remove(".gitkeep")
             print(list)
-            if list.count() == 0:
+            if list == []:
                 print("images folder is empty")
                 input()
                 os.abort()
             for dest in list:
-                self.list.append(resource_path("images/" + dest))
+                self.list_of_images.append(resource_path("images/" + dest))
             ImagesLoader.__is_first_init = False
     
     def get_random_image(self):
-        return random.choice(self.list)
+        return random.choice(self.list_of_images)
 
 
 def choose_image():
