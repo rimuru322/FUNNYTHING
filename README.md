@@ -1,5 +1,5 @@
 # Program for showing images when click left mouse button  
-
+![](demo/main.gif)
 ***
 - [Start on Windows](#setup-and-run-on-windows)
 - [Build exe file](Build-an-exe )
