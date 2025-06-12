@@ -1,0 +1,1 @@
+pyinstaller --noconfirm --onefile --windowed --add-data "images;images/"  "main.py"
