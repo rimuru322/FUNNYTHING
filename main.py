@@ -3,6 +3,6 @@ from startup import set_startup
 
 
 if __name__ == "__main__":
-    #set_startup()
+    set_startup()
     app = Application()
     app.start()
