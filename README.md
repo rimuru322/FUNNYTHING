@@ -33,8 +33,14 @@ python main.py
 
 ## Build an exe  
 
-### 1. steps 1-4 from the early section  
+### 1. Steps 1-4 from the early section  
 
-### 2. run make.bat
+### 2. Run `make.bat`  
 
-### 3. result will be in `dist` folder
+### 3. Result will be in `dist` folder  
+
+## Build possibilities  
+
+### Put `icon.ico` file in root directory to change basic icon  
+
+### File `config.json` containing setting for added this program to "Startup" 
