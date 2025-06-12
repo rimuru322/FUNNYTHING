@@ -28,6 +28,10 @@ class ImagesLoader():
             list = os.listdir(resource_path("images/"))
             list.remove(".gitkeep")
             print(list)
+            if list.count() == 0:
+                print("images folder is empty")
+                input()
+                os.abort()
             for dest in list:
                 self.list.append(resource_path("images/" + dest))
             ImagesLoader.__is_first_init = False
