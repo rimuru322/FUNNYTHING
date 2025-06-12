@@ -7,4 +7,6 @@ images/*.png
 images/*.jpg
 build
 dist
+output
 **.spec
+**.ico
